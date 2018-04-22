@@ -1,0 +1,44 @@
+package Ejercicio4;
+
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+import java.util.concurrent.CountDownLatch;
+
+public class Pista {
+	
+	public static void main(String[]Args) throws Exception{
+		
+		
+		Competidor Liebre = new Liebre();
+		Competidor Tortuga = new Liebre();
+		
+		java.util.List<Carril> listaCompetidor = Collections.synchronizedList(new ArrayList());
+		
+		CountDownLatch ContadorInicio = new CountDownLatch(2);
+		CountDownLatch ContadorFinalizacion = new CountDownLatch(2);
+		
+		Carril Carril1= new Carril(Liebre,ContadorInicio,ContadorFinalizacion,listaCompetidor);
+		Carril Carril2 = new Carril(Tortuga,ContadorInicio,ContadorFinalizacion,listaCompetidor);
+		
+		Carril1.start();
+		Carril2.start();
+		
+		ContadorInicio.countDown();
+		
+		ContadorFinalizacion.await();
+		
+		System.out.println("\n \n \n ");
+		
+		
+			
+		for (Carril x : listaCompetidor) {
+			
+		}
+		
+	}
+	
+	
+
+}

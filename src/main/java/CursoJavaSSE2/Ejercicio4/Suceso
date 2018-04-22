@@ -1,0 +1,12 @@
+package Ejercicio4;
+
+public enum Suceso{
+	
+	RAPIDO(3), RESBALO(-6), LENTO(1), DUERME(0), GRAN_SALTO(9), RESBALON_GRANDE(-12), PEQUENO_SALTO(1), RESBALON_PEQUENO(-2);
+	
+	int avance;
+	
+	private Suceso(int avance) {
+		this.avance=avance;
+	}
+}

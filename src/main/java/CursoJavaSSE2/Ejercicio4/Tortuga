@@ -1,0 +1,22 @@
+package Ejercicio4;
+
+public class Tortuga implements Competidor{
+
+	public String nombre() {
+		return "Tortuga";
+	}
+	
+	@Override
+	public Suceso suceso(int Numero) {
+		if(Numero<=0&&Numero>=4) {
+			return Suceso.RAPIDO;
+		}else if (Numero>=5&&Numero<=6) {
+			return Suceso.RESBALO;
+		}else {
+			return Suceso.LENTO;
+		}
+		
+	}
+
+
+}

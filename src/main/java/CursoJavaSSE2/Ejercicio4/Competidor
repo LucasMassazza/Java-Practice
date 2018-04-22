@@ -1,0 +1,12 @@
+package Ejercicio4;
+
+import java.util.Random;
+
+public interface Competidor {
+	public String nombre();
+	public Suceso suceso(int Numero);
+	default int random() {
+		Random NumeroRandom = new Random();
+		return NumeroRandom.nextInt(10);
+	}
+}
