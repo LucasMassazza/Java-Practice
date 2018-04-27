@@ -17,7 +17,20 @@ public class Ejercicio14 extends Matrix {
 
     public boolean esDiagonal(Matrix matriz){
 
+        for (int i = 0; i < matriz.rows(); i++) {
+            for (int j = 0; j < matriz.columns(); j++) {
+                if(i==j){
+                    if(matriz.get(i,j)==0){
+                        return false;
+                    }
+                }else{
+                    if (matriz.get(i,j)!=0){
+                        return false;
+                    }
+                }
+            }
+        }
 
-        return false;
+        return true;
     }
 }
