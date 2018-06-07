@@ -71,6 +71,17 @@ public class Handler extends Thread{
 
             }else{
 
+                out.println(matrizEnteros[0].length);
+                int filaSobreescribir = in.nextInt();
+
+                arraySemaforos[filaSobreescribir].acquire();
+                for (int i = 0; i < matrizEnteros.length; i++) {
+                    matrizEnteros[filaSobreescribir][i]=in.nextInt();
+                }
+                arraySemaforos[filaSobreescribir].release();
+
+                out.println("OK");
+
             }
 
         }catch (IOException e){

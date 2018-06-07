@@ -39,44 +39,26 @@ public class Cliente {
                     System.out.print("| "+aux+" |");
                 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             }else if (opcion.equals("POST")){
-
                 out.println(0);
-
                 int cantidadColumnas = in.nextInt();
-
                 System.out.println("Que fila desea sobreescribir...");
-
                 int filaSobreescribir = stdin.nextInt();
-
                 out.println(filaSobreescribir);
-
                 int aux;
-
                 for (int i = 0; i < cantidadColumnas; i++) {
                     System.out.println("Ingrese valor...");
-
                     aux=stdin.nextInt();
-
                     out.println(aux);
                 }
 
                 String confirmacion = in.nextLine();
                 System.out.println(confirmacion);
+
+
+
+
+
 
             }else{
                 System.out.println("ERROR");
