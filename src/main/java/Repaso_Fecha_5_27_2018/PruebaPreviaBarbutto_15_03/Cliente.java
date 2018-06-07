@@ -9,12 +9,12 @@ public class Cliente {
 
     public static void main(String[]Args){
 
-        Socket socket;
+        Socket socket = null;
 
         try {
             socket = new Socket("localhost",12345);
 
-            PrintWriter out = new PrintWriter(socket.getOutputStream());
+            PrintWriter out = new PrintWriter(socket.getOutputStream(),true);
             Scanner in = new Scanner(socket.getInputStream());
             Scanner stdin = new Scanner(System.in);
 
@@ -23,52 +23,77 @@ public class Cliente {
 
             if(opcion.equals("GET")){
                 out.println(1);
-
                 int cantidadFilas = in.nextInt();
-
                 System.out.println("Hay de 0 a "+(cantidadFilas-1));
+                int aux;
+                out.println(cantidadFilas);
+                while (cantidadFilas>0){
+                    System.out.println("Numero de Fila...");
+                    aux = stdin.nextInt();
+                    out.println(aux);
+                    cantidadFilas--;
+                }
+                int tamanoArray = in.nextInt();
+                for (int i = 0; i < tamanoArray; i++) {
+                    aux = in.nextInt();
+                    System.out.print("| "+aux+" |");
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }else if (opcion.equals("POST")){
+
+                out.println(0);
+
+                int cantidadColumnas = in.nextInt();
+
+                System.out.println("Que fila desea sobreescribir...");
+
+                int filaSobreescribir = stdin.nextInt();
+
+                out.println(filaSobreescribir);
 
                 int aux;
 
-                while (cantidadFilas>0){
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    System.out.println("Ingrese valor...");
 
-                    System.out.println("Numero de Fila...");
-
-                    aux = stdin.nextInt();
+                    aux=stdin.nextInt();
 
                     out.println(aux);
-
-                    cantidadFilas--;
                 }
 
-                int tamanoArray = in.nextInt();
-                int[] arrayCodificado = new int [tamanoArray];
-                for (int i = 0; i < arrayCodificado.length; i++) {
-                    arrayCodificado[i]=in.nextInt();
-                }
-
-                int[] arrayDecodificado = decodificacion(arrayCodificado);
-
-                for (int i = 0; i < arrayDecodificado.length; i++) {
-                    System.out.print("| "+arrayDecodificado[i]+" |");
-                }
-            }else if (opcion.equals("POST")){
+                String confirmacion = in.nextLine();
+                System.out.println(confirmacion);
 
             }else{
                 System.out.println("ERROR");
             }
-
-
         }catch (IOException e){
             e.printStackTrace();
         }finally {
+            try{
+                if(socket!=null){
+                    socket.close();
+                }
+            }catch (IOException e){
+                e.printStackTrace();
+            }
 
         }
 
-    }
-
-    public static int[] decodificacion(int[]array){
-        return null;
     }
 
 }
