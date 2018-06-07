@@ -55,11 +55,6 @@ public class Cliente {
                 String confirmacion = in.nextLine();
                 System.out.println(confirmacion);
 
-
-
-
-
-
             }else{
                 System.out.println("ERROR");
             }
