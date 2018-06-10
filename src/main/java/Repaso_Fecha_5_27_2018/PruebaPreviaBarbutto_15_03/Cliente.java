@@ -23,9 +23,11 @@ public class Cliente {
 
             if(opcion.equals("GET")){
                 out.println(1);
-                int cantidadFilas = in.nextInt();
-                System.out.println("Hay de 0 a "+(cantidadFilas-1));
+                int cantidadFilasTotal = in.nextInt();
+                System.out.println("Hay de 0 a "+(cantidadFilasTotal-1));
                 int aux;
+                System.out.println("Cantidad de filas");
+                int cantidadFilas = stdin.nextInt();
                 out.println(cantidadFilas);
                 while (cantidadFilas>0){
                     System.out.println("Numero de Fila...");

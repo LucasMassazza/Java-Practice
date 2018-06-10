@@ -1,7 +1,5 @@
 package Repaso_Fecha_5_27_2018.PruebaPreviaBarbutto_15_03;
 
-import com.sun.tools.jdeprscan.scan.Scan;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -120,6 +118,12 @@ public class Handler extends Thread{
             }
         }
 
+
+        arrayCodificado = new int[listaCodificados.size()];
+
+        for (int i = 0; i < listaCodificados.size(); i++) {
+            arrayCodificado[i]=listaCodificados.get(i);
+        }
 
         return arrayCodificado;
     }
