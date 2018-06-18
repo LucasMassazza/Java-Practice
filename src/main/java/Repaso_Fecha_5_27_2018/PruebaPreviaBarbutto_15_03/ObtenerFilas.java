@@ -29,15 +29,15 @@ public class ObtenerFilas extends Thread {
     @Override
     public void run(){
         try {
-
+            int aux;
            for (int i = 0; i < matrizEnteros[numeroFila].length; i++) {
                 arraySemaforos[i].acquire();
-                mutex.acquire();
-
-                listaEnteros.add(matrizEnteros[numeroFila][i]);
-
-                mutex.release();
+                aux = matrizEnteros[numeroFila][i];
                 arraySemaforos[i].release();
+
+                mutex.acquire();
+                listaEnteros.add(aux);
+                mutex.release();
             }
 
 

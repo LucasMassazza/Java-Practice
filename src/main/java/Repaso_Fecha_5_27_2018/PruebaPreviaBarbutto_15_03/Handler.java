@@ -72,9 +72,15 @@ public class Handler extends Thread{
                 out.println(matrizEnteros[0].length);
                 int filaSobreescribir = in.nextInt();
 
+                int[] arrayEntrantes = new int[matrizEnteros.length];
+
+                for (int i = 0; i < matrizEnteros.length; i++) {
+                    arrayEntrantes[i]=in.nextInt();
+                }
+
                 arraySemaforos[filaSobreescribir].acquire();
                 for (int i = 0; i < matrizEnteros.length; i++) {
-                    matrizEnteros[filaSobreescribir][i]=in.nextInt();
+                    matrizEnteros[filaSobreescribir][i]=arrayEntrantes[i];
                 }
                 arraySemaforos[filaSobreescribir].release();
 
