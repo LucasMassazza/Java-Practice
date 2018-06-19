@@ -6,12 +6,13 @@ public class Main {
 
         int [] array = {2,4,2,2,2,2,4,4,4};
 
+        Compactar compactar = new Compactar();
 
         for (int i = 0; i < array.length; i++) {
             System.out.print("| "+array[i]+" |");
         }
 
-        array=colapsar(array);
+        array=compactar.colapsar(array);
 
         System.out.println("\n\n\n");
 
@@ -25,44 +26,5 @@ public class Main {
 
     }
 
-    public static int[] colapsar(int[] array){
 
-        int indiceDeColapso = 0;
-
-        for (int i = 0; i < array.length-1; i++) {
-
-            if (array[i]==array[i+1] && array[i]!=-1){
-                array[i]=array[i]+array[i];
-                array[i+1]=-1;
-                indiceDeColapso++;
-
-                mover(array,i+1);
-
-            }
-
-        }
-
-
-        return array;
-    }
-
-    public static int[] mover (int[] array,int indiceDeColapso){
-
-        int aux;
-
-        for (; indiceDeColapso < array.length -1; indiceDeColapso++) {
-            if(array[indiceDeColapso]!=array[indiceDeColapso+1]){
-                aux=array[indiceDeColapso+1];
-                array[indiceDeColapso+1]=array[indiceDeColapso];
-                array[indiceDeColapso]=aux;
-            }else{
-                return array;
-            }
-
-
-        }
-
-        return array;
-
-    }
 }
