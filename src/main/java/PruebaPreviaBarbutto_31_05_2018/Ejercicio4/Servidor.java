@@ -19,8 +19,10 @@ public class Servidor {
             Semaphore semaphore = new Semaphore(1);
 
             while (true){
-
                 socket = ss.accept();
+                System.out.println("CONNECTED");
+
+
 
                 handler = new Handler(arrayCompartido,semaphore,socket);
 

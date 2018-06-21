@@ -37,7 +37,9 @@ public class Handler extends Thread {
                 }
                 arrayCompartido.volverACeroIndice();
                 semaphore.release();
-            }else{
+            }
+
+            else{
                 out.println("GET");
                 int numero = in.nextInt();
 
@@ -49,6 +51,11 @@ public class Handler extends Thread {
                         arrayCompartido.sumarIndice();
 
                     }
+
+                    for (int i = 0; i < arrayCompartido.tamanoArray(); i++) {
+                        System.out.print("| "+arrayCompartido.getArray(i)+" |");
+                    }
+                    
                     semaphore.release();
                 }
             }

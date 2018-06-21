@@ -39,11 +39,13 @@ public class Cola {
 
         array[indice]=numero;
 
-        for (int i = array.length; i >= 0; i--) {
-            for (int j = 0; j >= i; j++) {
-                aux = array[j+1];
-                array[j+1]=array[j];
-                array[j]=aux;
+        for (int i = array.length-1; i >= 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (array[j]>array[j+1]){
+                    aux = array[j+1];
+                    array[j+1]=array[j];
+                    array[j]=aux;
+                }
             }
         }
 
@@ -52,7 +54,6 @@ public class Cola {
     public void volverACeroIndice(){
         indice=0;
     }
-
 
 
 
