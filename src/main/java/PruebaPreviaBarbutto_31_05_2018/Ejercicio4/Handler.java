@@ -41,7 +41,7 @@ public class Handler extends Thread {
 
             else{
                 out.println("GET");
-                int numero = in.nextInt();
+                int numero = in.nextInt();  // Entra numero
 
                 if(!arrayCompartido.lleno()){
                     semaphore.acquire();
@@ -55,7 +55,7 @@ public class Handler extends Thread {
                     for (int i = 0; i < arrayCompartido.tamanoArray(); i++) {
                         System.out.print("| "+arrayCompartido.getArray(i)+" |");
                     }
-                    
+
                     semaphore.release();
                 }
             }

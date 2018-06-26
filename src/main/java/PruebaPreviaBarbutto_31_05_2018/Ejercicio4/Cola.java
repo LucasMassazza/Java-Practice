@@ -14,11 +14,9 @@ public class Cola {
         indice++;
     }
 
-    public void restarIndice(){ indice--; }
-
     public boolean lleno(){
 
-        if(indice==array.length-1){
+        if(indice==array.length){
             return true;
         }
 
@@ -37,7 +35,7 @@ public class Cola {
 
         int aux;
 
-        array[indice]=numero;
+        array[0]=numero;
 
         for (int i = array.length-1; i >= 0; i--) {
             for (int j = 0; j < i; j++) {
@@ -48,7 +46,6 @@ public class Cola {
                 }
             }
         }
-
     }
 
     public void volverACeroIndice(){
